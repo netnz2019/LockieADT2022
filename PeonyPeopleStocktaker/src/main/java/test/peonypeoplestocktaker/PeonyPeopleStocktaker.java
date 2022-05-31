@@ -1,17 +1,30 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
- */
-
 package test.peonypeoplestocktaker;
+import java.io.*;
+import java.util.Scanner;  
+import java.util.ArrayList; 
 
-/**
- *
- * @author nzloc
- */
 public class PeonyPeopleStocktaker {
+   
+static ArrayList<Coral> Coral = new ArrayList<Coral>();
+static ArrayList<Sarah> Sarah = new ArrayList<Sarah>();
+static ArrayList<Red> Red = new ArrayList<Red>();
 
-    public static void main(String[] args) {
-        System.out.println("Hello World!");
-    }
+ public static void main( String args[] )
+{
+ // Creates the gui window            
+javax.swing.JFrame window = new javax.swing.JFrame("PeonyPeople");
+window.getContentPane().add(new StocktakerGUI());
+window.setVisible(true);
+window.pack();
+window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+
+ 
+    
+
 }
+
+
+
+
+}
+
