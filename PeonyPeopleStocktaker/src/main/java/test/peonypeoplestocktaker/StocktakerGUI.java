@@ -4,6 +4,9 @@
  */
 package test.peonypeoplestocktaker;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author nzloc
@@ -174,6 +177,11 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         AddSavedData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddSavedData.setText("Save Data");
+        AddSavedData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddSavedDataActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -240,12 +248,21 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VeiwFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwFlowerTypeActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here: 
+        
     }//GEN-LAST:event_VeiwFlowerTypeActionPerformed
 
     private void AddFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFlowerTypeActionPerformed
-        // TODO add your handling code here:
+    String flowertype = AddFlowerType.getSelectedItem().toString();
+    if (flowertype == "Coral Sunset")
+    {PeonyPeopleStocktaker.Coralload();}
+// TODO add your handling code here:
     }//GEN-LAST:event_AddFlowerTypeActionPerformed
+
+    private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed
+
+// TODO add your handling code here:
+    }//GEN-LAST:event_AddSavedDataActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
