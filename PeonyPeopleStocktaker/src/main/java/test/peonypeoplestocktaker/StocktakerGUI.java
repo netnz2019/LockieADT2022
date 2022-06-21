@@ -164,6 +164,11 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         LoadSavedData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         LoadSavedData.setText("Load Saved Data");
+        LoadSavedData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoadSavedDataActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel6.setText("Amount Gained");
@@ -263,6 +268,10 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
 // TODO add your handling code here:
     }//GEN-LAST:event_AddSavedDataActionPerformed
+
+    private void LoadSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadSavedDataActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LoadSavedDataActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

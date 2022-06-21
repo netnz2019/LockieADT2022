@@ -8,10 +8,11 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+        import java.util.*; 
 
 public class PeonyPeopleStocktaker {
    
-static ArrayList<Coral> Coral = new ArrayList<Coral>();
+
 static ArrayList<Sarah> Sarah = new ArrayList<Sarah>();
 static ArrayList<Red> Red = new ArrayList<Red>();
 
@@ -24,59 +25,43 @@ window.setVisible(true);
 window.pack();
 window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 
+String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
 
+ArrayList<String> Coral = new ArrayList<String>();
+
+Coralload(filename, Coral);
 
 }
+
+
  
- public static void Coralload(){
-  
-     try{
-          FileInputStream fileIn = new 
-       FileInputStream("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt");
-          ObjectInputStream in = new ObjectInputStream(fileIn);
-          Coral = (ArrayList) in.readObject();
-          in.close();
-          fileIn.close();
-       }catch(IOException ioe){
-          ioe.printStackTrace();
-          return;
-       }catch(ClassNotFoundException c){
-          System.out.println("Class not found");
-          c.printStackTrace();
-          return;
-       }
- }
-        
-        
-public static void CoralAppend()throws IOException{
-FileWriter fw = null;
-        BufferedWriter bw = null;
-        PrintWriter pw = null;
+public static void Coralload(String filename,
+ArrayList<String> fileData){
 
-        try {
-            fw = new FileWriter("Coral.txt", true);
-            bw = new BufferedWriter(fw);
-            pw = new PrintWriter(bw);
+File coral = new File(filename);
 
-            pw.println("");
-            pw.println("");
-            pw.println("");
+try{
 
-            
-            pw.flush();
+Scanner fileScan = new Scanner(coral);
 
-        } finally {
-            try {
-                pw.close();
-                bw.close();
-                fw.close();
-            } catch (IOException io) {
-            
-    
+while(fileScan.hasNextLine()){
 
+System.out.println(fileScan.nextLine());
+
+fileData.add(fileScan.nextLine());
 }
+}catch(FileNotFoundException e){
+System.out.println("File not found");
+System.exit(1); 
+}
+}
+}
+     
+     
+       
+   
 
-        }}}
+        
 
 
 
