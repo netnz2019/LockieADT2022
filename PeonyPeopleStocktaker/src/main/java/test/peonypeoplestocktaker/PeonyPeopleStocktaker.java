@@ -31,7 +31,8 @@ window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
  public static void Coralload(){
   
      try{
-          FileInputStream fileIn = new FileInputStream("Coral.txt");
+          FileInputStream fileIn = new 
+       FileInputStream("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt");
           ObjectInputStream in = new ObjectInputStream(fileIn);
           Coral = (ArrayList) in.readObject();
           in.close();
@@ -42,7 +43,8 @@ window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
        }catch(ClassNotFoundException c){
           System.out.println("Class not found");
           c.printStackTrace();
-          return;}
+          return;
+       }
  }
         
         
@@ -69,12 +71,12 @@ FileWriter fw = null;
                 bw.close();
                 fw.close();
             } catch (IOException io) {
-            }
+            
     
 
 }
 
-}}
+        }}}
 
 
 
