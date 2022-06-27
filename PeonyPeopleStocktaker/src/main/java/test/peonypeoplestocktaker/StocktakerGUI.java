@@ -59,7 +59,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel2.setText("Type of Flower");
 
         VeiwFlowerType.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        VeiwFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
+        VeiwFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flower Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
         VeiwFlowerType.setPreferredSize(new java.awt.Dimension(206, 36));
         VeiwFlowerType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,7 +154,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel3.setText("Type of Flower");
 
         AddFlowerType.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        AddFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
+        AddFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flower Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
         AddFlowerType.setPreferredSize(new java.awt.Dimension(170, 45));
         AddFlowerType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +253,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VeiwFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwFlowerTypeActionPerformed
-        // TODO add your handling code here: 
+  String flowertype = VeiwFlowerType.getSelectedItem().toString();
+    if (flowertype == "Coral Sunset")
+    {PeonyPeopleStocktaker.Coralload();} 
         
     }//GEN-LAST:event_VeiwFlowerTypeActionPerformed
 
@@ -261,7 +263,8 @@ public class StocktakerGUI extends javax.swing.JPanel {
     String flowertype = AddFlowerType.getSelectedItem().toString();
     if (flowertype == "Coral Sunset")
     {PeonyPeopleStocktaker.Coralload();}
-// TODO add your handling code here:
+    
+    
     }//GEN-LAST:event_AddFlowerTypeActionPerformed
 
     private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed

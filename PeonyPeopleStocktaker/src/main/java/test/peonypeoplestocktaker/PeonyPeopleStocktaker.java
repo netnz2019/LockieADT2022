@@ -25,37 +25,40 @@ window.setVisible(true);
 window.pack();
 window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 
-String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
 
-ArrayList<String> Coral = new ArrayList<String>();
-
-Coralload(filename, Coral);
 
 }
 
 
  
-public static void Coralload(String filename,
-ArrayList<String> fileData){
+public static void Coralload(){
 
+String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
 File coral = new File(filename);
+ArrayList<String> Coral = new ArrayList<String>();
 
 try{
-
 Scanner fileScan = new Scanner(coral);
-
 while(fileScan.hasNextLine()){
+Coral.add(fileScan.nextLine());
+}}
 
-System.out.println(fileScan.nextLine());
-
-fileData.add(fileScan.nextLine());
-}
-}catch(FileNotFoundException e){
-System.out.println("File not found");
+catch(FileNotFoundException e){
+System.out.println(" File not found ");
 System.exit(1); 
 }
+for(String eachName:Coral){
+System.out.println(eachName);
 }
 }
+
+
+}
+
+ 
+
+
+
      
      
        
