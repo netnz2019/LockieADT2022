@@ -253,7 +253,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void VeiwFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwFlowerTypeActionPerformed
-  String flowertype = VeiwFlowerType.getSelectedItem().toString();
+    String flowertype = VeiwFlowerType.getSelectedItem().toString();
     if (flowertype == "Coral Sunset")
     {PeonyPeopleStocktaker.Coralload();} 
         
@@ -262,7 +262,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
     private void AddFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFlowerTypeActionPerformed
     String flowertype = AddFlowerType.getSelectedItem().toString();
     if (flowertype == "Coral Sunset")
-    {PeonyPeopleStocktaker.Coralload();}
+    {PeonyPeopleStocktaker.();}
     
     
     }//GEN-LAST:event_AddFlowerTypeActionPerformed

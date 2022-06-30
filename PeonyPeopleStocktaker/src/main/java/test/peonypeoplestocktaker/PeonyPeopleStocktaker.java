@@ -25,8 +25,6 @@ window.setVisible(true);
 window.pack();
 window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 
-
-
 }
 
 
@@ -35,25 +33,39 @@ public static void Coralload(){
 
 String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
 File coral = new File(filename);
-ArrayList<String> Coral = new ArrayList<String>();
+ArrayList<Coral> Corallist = new ArrayList<Coral>();
 
 try{
-Scanner fileScan = new Scanner(coral);
-while(fileScan.hasNextLine()){
-Coral.add(fileScan.nextLine());
-}}
 
-catch(FileNotFoundException e){
+Scanner fileScan = new Scanner(coral);
+
+while(fileScan.hasNextLine()){
+
+String[] eachItem = fileScan.nextLine().split(",");
+
+try{
+   int sold = Integer.parseInt(eachItem[0].trim());
+   int gained = Integer.parseInt(eachItem[0].trim());
+
+Corallist.add(new Coral(sold, gained));
+}catch(NumberFormatException e){
+
+System.out.println(" ignoring this line - couldn't parse ");
+}
+}
+}catch(FileNotFoundException e){
 System.out.println(" File not found ");
 System.exit(1); 
 }
-for(String eachName:Coral){
-System.out.println(eachName);
-}
+showCoral(Corallist);
 }
 
-
-}
+public static void showCoral(ArrayList<Coral> Corallist){
+  for(Coral coral:Corallist){
+    System.out.println(coral.GetSold());
+    System.out.println(coral.GetGained());
+  }}}
+        
 
  
 
@@ -67,4 +79,4 @@ System.out.println(eachName);
         
 
 
-
+        
