@@ -287,7 +287,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
     private void VeiwDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwDataActionPerformed
         
-        VeiwTotalGained.setText(PeonyPeopleStocktaker.);        // TODO add your handling code here:
+        VeiwTotalGained.setText(PeonyPeopleStocktaker.CoralGained);        // TODO add your handling code here:
     }//GEN-LAST:event_VeiwDataActionPerformed
 
 

@@ -16,6 +16,7 @@ public class PeonyPeopleStocktaker {
 static ArrayList<Sarah> Sarah = new ArrayList<Sarah>();
 static ArrayList<Red> Red = new ArrayList<Red>();
 
+
  public static void main( String args[]) 
 {
  // Creates the gui window            
