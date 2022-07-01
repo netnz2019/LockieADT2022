@@ -4,7 +4,6 @@ package test.peonypeoplestocktaker;
 
 public class Coral {
 
-
     private int Sold;
     private int Gained;
     

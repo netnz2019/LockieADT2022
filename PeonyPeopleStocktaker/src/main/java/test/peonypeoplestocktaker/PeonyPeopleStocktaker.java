@@ -45,7 +45,7 @@ String[] eachItem = fileScan.nextLine().split(",");
 
 try{
    int sold = Integer.parseInt(eachItem[0].trim());
-   int gained = Integer.parseInt(eachItem[0].trim());
+   int gained = Integer.parseInt(eachItem[1].trim());
 
 Corallist.add(new Coral(sold, gained));
 }catch(NumberFormatException e){
@@ -64,6 +64,8 @@ public static void showCoral(ArrayList<Coral> Corallist){
   for(Coral coral:Corallist){
     System.out.println(coral.GetSold());
     System.out.println(coral.GetGained());
+    String CoralGained = Integer.toString(coral.GetGained());
+    
   }}}
         
 

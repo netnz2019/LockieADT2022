@@ -4,7 +4,7 @@ package test.peonypeoplestocktaker;
         
 public class Red {
     private int Sold;
-    private int Gained;
+    public int Gained;
     
 public Red(int Sold, int Gained)
 {

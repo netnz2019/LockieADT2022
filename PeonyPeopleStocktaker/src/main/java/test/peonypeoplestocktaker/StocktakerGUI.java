@@ -20,6 +20,10 @@ public class StocktakerGUI extends javax.swing.JPanel {
         initComponents();
     }
 
+    
+
+        
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -69,6 +73,11 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         VeiwData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         VeiwData.setText("View Data");
+        VeiwData.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VeiwDataActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel1.setText("Total Gained");
@@ -262,7 +271,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
     private void AddFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFlowerTypeActionPerformed
     String flowertype = AddFlowerType.getSelectedItem().toString();
     if (flowertype == "Coral Sunset")
-    {PeonyPeopleStocktaker.();}
+    {}
     
     
     }//GEN-LAST:event_AddFlowerTypeActionPerformed
@@ -275,6 +284,11 @@ public class StocktakerGUI extends javax.swing.JPanel {
     private void LoadSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadSavedDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LoadSavedDataActionPerformed
+
+    private void VeiwDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwDataActionPerformed
+        
+        VeiwTotalGained.setText(PeonyPeopleStocktaker.);        // TODO add your handling code here:
+    }//GEN-LAST:event_VeiwDataActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
