@@ -157,7 +157,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
                 .addGap(73, 73, 73))
         );
 
-        Tab.addTab("Veiw Data", jPanel1);
+        Tab.addTab("View Data", jPanel1);
 
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel3.setText("Type of Flower");
