@@ -186,8 +186,10 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel7.setText("Amount Sold");
 
         AddAmountGained.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        AddAmountGained.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         AddAmountSold.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        AddAmountSold.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
 
         AddSavedData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddSavedData.setText("Save Data");
@@ -264,7 +266,13 @@ public class StocktakerGUI extends javax.swing.JPanel {
     private void VeiwFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwFlowerTypeActionPerformed
     String flowertype = VeiwFlowerType.getSelectedItem().toString();
     if (flowertype == "Coral Sunset")
-    {PeonyPeopleStocktaker.Coralload();} 
+    {PeonyPeopleStocktaker.Coralload();}
+    
+    else if (flowertype == "Red Charm")
+    {PeonyPeopleStocktaker.Redload();}
+    
+    else if (flowertype == "Sarah Bernhardt")
+    {PeonyPeopleStocktaker.Sarahload();}
         
     }//GEN-LAST:event_VeiwFlowerTypeActionPerformed
 
@@ -286,8 +294,22 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_LoadSavedDataActionPerformed
 
     private void VeiwDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwDataActionPerformed
-        
-        VeiwTotalGained.setText(PeonyPeopleStocktaker.CoralGained);        // TODO add your handling code here:
+        String flowertype = VeiwFlowerType.getSelectedItem().toString();
+    if (flowertype == "Coral Sunset")
+    {VeiwTotalGained.setText(PeonyPeopleStocktaker.showCoralGained());    
+        VeiwTotalSold.setText(PeonyPeopleStocktaker.showCoralSold());
+    VeiwTotalStock.setText(PeonyPeopleStocktaker.showCoralStock());} 
+    
+    else if (flowertype == "Red Charm")
+    {VeiwTotalGained.setText(PeonyPeopleStocktaker.showRedGained());    
+        VeiwTotalSold.setText(PeonyPeopleStocktaker.showRedSold());
+    VeiwTotalStock.setText(PeonyPeopleStocktaker.showRedStock());}
+    
+    else if (flowertype == "Sarah Bernhardt")
+    {VeiwTotalGained.setText(PeonyPeopleStocktaker.showSarahGained());    
+        VeiwTotalSold.setText(PeonyPeopleStocktaker.showSarahSold());
+    VeiwTotalStock.setText(PeonyPeopleStocktaker.showSarahStock());}
+        // TODO add your handling code here:
     }//GEN-LAST:event_VeiwDataActionPerformed
 
 
