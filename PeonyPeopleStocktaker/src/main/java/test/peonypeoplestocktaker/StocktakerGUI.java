@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.logging.Level;
@@ -64,9 +65,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
         LoadSavedData = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        AddAmountGained = new javax.swing.JSpinner();
-        AddAmountSold = new javax.swing.JSpinner();
         AddSavedData = new javax.swing.JButton();
+        AddAmountGained = new javax.swing.JTextField();
+        AddAmountSold = new javax.swing.JTextField();
 
         jPanel1.setForeground(new java.awt.Color(153, 255, 255));
 
@@ -196,12 +197,6 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel7.setText("Amount Sold");
 
-        AddAmountGained.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        AddAmountGained.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
-        AddAmountSold.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        AddAmountSold.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
-
         AddSavedData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddSavedData.setText("Save Data");
         AddSavedData.addActionListener(new java.awt.event.ActionListener() {
@@ -229,10 +224,10 @@ public class StocktakerGUI extends javax.swing.JPanel {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel7)
                             .addComponent(jLabel6))
-                        .addGap(73, 73, 73)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AddAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(66, 66, 66)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AddAmountSold, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                            .addComponent(AddAmountGained)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(355, 355, 355)
                         .addComponent(AddSavedData)))
@@ -247,15 +242,15 @@ public class StocktakerGUI extends javax.swing.JPanel {
                     .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
                 .addComponent(LoadSavedData)
-                .addGap(67, 67, 67)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addGap(46, 46, 46)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AddAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
+                .addGap(73, 73, 73)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(51, 51, 51)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(AddAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
                 .addComponent(AddSavedData)
                 .addGap(23, 23, 23))
         );
@@ -297,8 +292,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
     private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed
     
-        int AmountGained = AddAmountGained.getValue().hashCode();
-            
+        String AmountGainedString = AddAmountGained.getText();
+        int AmountGained = Integer.parseInt(AmountGainedString);   
+        //if statemnet for neagtive numbers
         try {
             CoralloadAdd(AmountGained);
         } catch (IOException ex) {
@@ -336,18 +332,40 @@ System.exit(1);
 AddCoralGained(AmountGained);
 }
     public static String AddCoralGained(int AmountGained) throws IOException{
-      String TotalCoralAdd = "";
+      String TotalCoralGainedAdd = "";
     for(Coral coral:Corallist){
        int NewCoralInt = coral.GetGained() + AmountGained;
-       TotalCoralAdd = Integer.toString(NewCoralInt);
-       System.out.print(TotalCoralAdd);
+       TotalCoralGainedAdd = Integer.toString(NewCoralInt);
+       System.out.print(TotalCoralGainedAdd);
     }
-        
-      PrintToCoral(TotalCoralAdd);
-      return TotalCoralAdd;
+        clearFile();
+      PrintToCoral(TotalCoralGainedAdd);
+      
+      return TotalCoralGainedAdd;
     }     
-    
-    public static String PrintToCoral(String TotalCoralAdd) throws IOException{
+    public static void clearFile()
+
+{
+    try{
+
+    FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", false);
+
+    PrintWriter pw = new PrintWriter(fw, false);
+
+    pw.flush();
+
+    pw.close();
+
+    fw.close();
+
+    }catch(Exception exception){
+
+        System.out.println("Exception have been caught");
+
+    }
+
+}
+    public static String PrintToCoral(String TotalCoralGainedAdd) throws IOException{
      FileWriter fw = null;
      BufferedWriter bw = null;
      PrintWriter pw = null;
@@ -355,8 +373,9 @@ AddCoralGained(AmountGained);
      try {
             fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", true);
             bw = new BufferedWriter(fw);
-            pw = new PrintWriter(bw);
-            pw.print(TotalCoralAdd);
+            pw = new PrintWriter(bw);          
+            pw.print(TotalCoralGainedAdd);
+            pw.print(",");
            
 
             System.out.println("Data Successfully appended into file");
@@ -399,8 +418,8 @@ AddCoralGained(AmountGained);
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JSpinner AddAmountGained;
-    private javax.swing.JSpinner AddAmountSold;
+    private javax.swing.JTextField AddAmountGained;
+    private javax.swing.JTextField AddAmountSold;
     private javax.swing.JComboBox<String> AddFlowerType;
     private javax.swing.JButton AddSavedData;
     private javax.swing.JButton LoadSavedData;
