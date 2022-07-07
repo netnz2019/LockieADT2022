@@ -3,9 +3,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package test.peonypeoplestocktaker;
-
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.Corallist;
+import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.showCoralGained;
+import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.showCoralSold;
 
 /**
  *
@@ -285,10 +296,84 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_AddFlowerTypeActionPerformed
 
     private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed
-
-// TODO add your handling code here:
+    
+        int AmountGained = AddAmountGained.getValue().hashCode();
+            
+        try {
+            CoralloadAdd(AmountGained);
+        } catch (IOException ex) {
+            Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_AddSavedDataActionPerformed
+    
+public static void CoralloadAdd(int AmountGained) throws IOException{
 
+String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
+File coral = new File(filename);
+
+try{
+
+Scanner fileScan = new Scanner(coral);
+while(fileScan.hasNextLine()){
+
+String[] eachItem = fileScan.nextLine().split(",");
+
+try{
+   int sold = Integer.parseInt(eachItem[0].trim());
+   int gained = Integer.parseInt(eachItem[1].trim());
+
+Corallist.add(new Coral(sold, gained));
+}catch(NumberFormatException e){
+
+System.out.println(" ignoring this line - couldn't parse ");
+}
+}
+}catch(FileNotFoundException e){
+System.out.println(" File not found ");
+System.exit(1); 
+}
+AddCoralGained(AmountGained);
+}
+    public static String AddCoralGained(int AmountGained) throws IOException{
+      String TotalCoralAdd = "";
+    for(Coral coral:Corallist){
+       int NewCoralInt = coral.GetGained() + AmountGained;
+       TotalCoralAdd = Integer.toString(NewCoralInt);
+       System.out.print(TotalCoralAdd);
+    }
+        
+      PrintToCoral(TotalCoralAdd);
+      return TotalCoralAdd;
+    }     
+    
+    public static String PrintToCoral(String TotalCoralAdd) throws IOException{
+     FileWriter fw = null;
+     BufferedWriter bw = null;
+     PrintWriter pw = null;
+     
+     try {
+            fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", true);
+            bw = new BufferedWriter(fw);
+            pw = new PrintWriter(bw);
+            pw.print(TotalCoralAdd);
+           
+
+            System.out.println("Data Successfully appended into file");
+            pw.flush();
+
+        } finally {
+            try {
+                pw.close();
+                bw.close();
+                fw.close();
+            } catch (IOException io) {// can't do anything }
+            }
+    }
+        return null;
+     
+    
+    }
     private void LoadSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadSavedDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LoadSavedDataActionPerformed

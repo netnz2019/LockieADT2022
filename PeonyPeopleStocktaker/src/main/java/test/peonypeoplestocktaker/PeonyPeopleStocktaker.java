@@ -9,9 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
         import java.util.*; 
-import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.Corallist;
-import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.showCoralGained;
-import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.showCoralSold;
+
 
 public class PeonyPeopleStocktaker {
    
@@ -30,6 +28,9 @@ window.pack();
 window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 }
 
+ 
+ 
+ 
 //Coral section
  
 // Loads the coral.txt file which stores the data
@@ -88,6 +89,9 @@ public static String showCoralStock(){
 }
         return CoralStock;
 }
+
+
+
 
 
 
@@ -150,6 +154,13 @@ public static String showRedStock(){
 }
         return RedStock;
 }
+
+
+
+
+
+
+
 //Sarah section
  
 // Loads the sarah.txt file which stores the data
@@ -208,8 +219,6 @@ public static String showSarahStock(){
 }
         return SarahStock;
 }
-
-
 
 
 }
