@@ -16,6 +16,8 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.Corallist;
+import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.Redlist;
+import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.Sarahlist;
 import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.showCoralGained;
 import static test.peonypeoplestocktaker.PeonyPeopleStocktaker.showCoralSold;
 
@@ -283,27 +285,47 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_VeiwFlowerTypeActionPerformed
 
     private void AddFlowerTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddFlowerTypeActionPerformed
-    String flowertype = AddFlowerType.getSelectedItem().toString();
-    if (flowertype == "Coral Sunset")
-    {}
-    
-    
+
     }//GEN-LAST:event_AddFlowerTypeActionPerformed
 
     private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed
     
         String AmountGainedString = AddAmountGained.getText();
         int AmountGained = Integer.parseInt(AmountGainedString);   
-        
+       
         String AmountSoldString = AddAmountSold.getText();
         int AmountSold = Integer.parseInt(AmountSoldString); 
+        
         //if statemnet for neagtive numbers
+        
+        
+        String flowertype = AddFlowerType.getSelectedItem().toString();
+        
+        if (flowertype == "Coral Sunset"){
         try {
             CoralloadAdd(AmountGained, AmountSold);
           
         } catch (IOException ex) {
             Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }}
+        
+  
+        if (flowertype == "Red Charm"){
+        try {
+            RedloadAdd(AmountGained, AmountSold);
+          
+        } catch (IOException ex) {
+            Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }}
+        
+        if (flowertype == "Sarah Bernhardt"){
+        try {
+            SarahloadAdd(AmountGained, AmountSold);
+          
+        } catch (IOException ex) {
+            Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
+        }}
+        
         
     }//GEN-LAST:event_AddSavedDataActionPerformed
     
@@ -348,16 +370,16 @@ AddCoral(AmountGained, AmountSold);
        int NewCoralSold = coral.GetSold() + AmountSold;
        TotalCoralGainedAdd = Integer.toString(NewCoralGained);
        TotalCoralSoldAdd = Integer.toString(NewCoralSold);
-       System.out.print(TotalCoralGainedAdd);
+      
     }
-      clearFile(); 
+      clearCoral(); 
       
       PrintToCoral(TotalCoralGainedAdd, TotalCoralSoldAdd);
       return TotalCoralGainedAdd;
     }     
     
     
-    public static void clearFile()
+    public static void clearCoral()
 {
     try{
     FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", false);
@@ -398,8 +420,194 @@ AddCoral(AmountGained, AmountSold);
      
     }
     
+    
+    
+ public static void RedloadAdd(int AmountGained, int AmountSold) throws IOException{
+
+String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt";
+File red = new File(filename);
+
+try{
+
+Scanner fileScan = new Scanner(red);
+while(fileScan.hasNextLine()){
+
+String[] eachItem = fileScan.nextLine().split(",");
+
+try{
+   int sold = Integer.parseInt(eachItem[0].trim());
+   int gained = Integer.parseInt(eachItem[1].trim());
+
+Redlist.add(new Red(sold, gained));
+}catch(NumberFormatException e){
+
+System.out.println(" ignoring this line - couldn't parse ");
+}
+}
+}catch(FileNotFoundException e){
+System.out.println(" File not found ");
+System.exit(1); 
+}
+AddRed(AmountGained, AmountSold);
+
+
+}
+
+
+
+    public static String AddRed(int AmountGained, int AmountSold) throws IOException{
+      String TotalRedGainedAdd = "";
+      String TotalRedSoldAdd = "";
+    for(Red red:Redlist){
+       int NewRedGained = red.GetGained() + AmountGained;
+       int NewRedSold = red.GetSold() + AmountSold;
+       TotalRedGainedAdd = Integer.toString(NewRedGained);
+       TotalRedSoldAdd = Integer.toString(NewRedSold);
+       
+    }
+      clearRed(); 
+      
+      PrintToRed(TotalRedGainedAdd, TotalRedSoldAdd);
+      return TotalRedGainedAdd;
+            
+      
+    }     
+    
+    
+    public static void clearRed()
+{
+    try{
+    FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt", false);
+    PrintWriter pw = new PrintWriter(fw, false);
+    pw.flush();
+    pw.close();
+    fw.close();
+    }catch(Exception exception){
+        System.out.println("Exception have been caught");
+    }
+}
+    
+    public static String PrintToRed(String TotalRedSoldAdd, String TotalRedGainedAdd) throws IOException{
+     FileWriter fw = null;
+     BufferedWriter bw = null;
+     PrintWriter pw = null;
+     
+     try {
+            fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt", true);
+            bw = new BufferedWriter(fw);
+            pw = new PrintWriter(bw);          
+            pw.print(TotalRedGainedAdd);
+            pw.print(",");
+            pw.print(TotalRedSoldAdd);
+           
+            System.out.println("Data Successfully appended into file");
+            pw.flush();
+
+        } finally {
+            try {
+                pw.close();
+                bw.close();
+                fw.close();
+            } catch (IOException io) {
+            }
+    }
+        return null;
+     
+    }
    
      
+    
+   public static void SarahloadAdd(int AmountGained, int AmountSold) throws IOException{
+
+ String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt";
+ File sarah = new File(filename);
+
+ try{
+
+ Scanner fileScan = new Scanner(sarah);
+ while(fileScan.hasNextLine()){
+
+ String[] eachItem = fileScan.nextLine().split(",");
+
+ try{
+    int sold = Integer.parseInt(eachItem[0].trim());
+    int gained = Integer.parseInt(eachItem[1].trim());
+
+ Sarahlist.add(new Sarah(sold, gained));
+ }catch(NumberFormatException e){
+
+System.out.println(" ignoring this line - couldn't parse ");
+}
+}
+}catch(FileNotFoundException e){
+System.out.println(" File not found ");
+System.exit(1); 
+}
+AddSarah(AmountGained, AmountSold);
+
+
+}
+
+
+
+    public static String AddSarah(int AmountGained, int AmountSold) throws IOException{
+      String TotalSarahGainedAdd = "";
+      String TotalSarahSoldAdd = "";
+    for(Sarah sarah:Sarahlist){
+       int NewSarahGained = sarah.GetGained() + AmountGained;
+       int NewSarahSold = sarah.GetSold() + AmountSold;
+       TotalSarahGainedAdd = Integer.toString(NewSarahGained);
+       TotalSarahSoldAdd = Integer.toString(NewSarahSold);
+    }
+      clearSarah(); 
+      
+      PrintToSarah(TotalSarahGainedAdd, TotalSarahSoldAdd);
+      return TotalSarahGainedAdd;
+            
+      
+    }     
+    
+    
+    public static void clearSarah()
+{
+    try{
+    FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt", false);
+    PrintWriter pw = new PrintWriter(fw, false);
+    pw.flush();
+    pw.close();
+    fw.close();
+    }catch(Exception exception){
+        System.out.println("Exception have been caught");
+    }
+}
+    
+    public static String PrintToSarah(String TotalSarahSoldAdd, String TotalSarahGainedAdd) throws IOException{
+     FileWriter fw = null;
+     BufferedWriter bw = null;
+     PrintWriter pw = null;
+     
+     try {
+            fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt", true);
+            bw = new BufferedWriter(fw);
+            pw = new PrintWriter(bw);          
+            pw.print(TotalSarahGainedAdd);
+            pw.print(",");
+            pw.print(TotalSarahSoldAdd);
+           
+            System.out.println("Data Successfully appended into file");
+            pw.flush();
+
+        } finally {
+            try {
+                pw.close();
+                bw.close();
+                fw.close();
+            } catch (IOException io) {
+            }
+    }
+        return null;
+     
+    }
     
     
     private void LoadSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadSavedDataActionPerformed

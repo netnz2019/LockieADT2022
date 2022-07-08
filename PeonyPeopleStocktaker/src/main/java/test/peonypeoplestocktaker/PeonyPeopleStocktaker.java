@@ -133,7 +133,7 @@ public static String showRedGained(){
   String RedGained = "";
     for(Red red:Redlist){
     RedGained = Integer.toString(red.GetGained());
-    System.out.print(red.GetGained());
+   
    }
     return RedGained;
  }
@@ -198,7 +198,6 @@ public static String showSarahGained(){
   String SarahGained = "";
     for(Sarah sarah:Sarahlist){
     SarahGained = Integer.toString(sarah.GetGained());
-    System.out.print(sarah.GetGained());
    }
     return SarahGained;
  }
