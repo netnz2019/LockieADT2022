@@ -294,16 +294,20 @@ public class StocktakerGUI extends javax.swing.JPanel {
     
         String AmountGainedString = AddAmountGained.getText();
         int AmountGained = Integer.parseInt(AmountGainedString);   
+        
+        String AmountSoldString = AddAmountSold.getText();
+        int AmountSold = Integer.parseInt(AmountSoldString); 
         //if statemnet for neagtive numbers
         try {
-            CoralloadAdd(AmountGained);
+            CoralloadAdd(AmountGained, AmountSold);
+          
         } catch (IOException ex) {
             Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_AddSavedDataActionPerformed
     
-public static void CoralloadAdd(int AmountGained) throws IOException{
+public static void CoralloadAdd(int AmountGained, int AmountSold) throws IOException{
 
 String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
 File coral = new File(filename);
@@ -329,43 +333,44 @@ System.out.println(" ignoring this line - couldn't parse ");
 System.out.println(" File not found ");
 System.exit(1); 
 }
-AddCoralGained(AmountGained);
+AddCoral(AmountGained, AmountSold);
+
+
 }
-    public static String AddCoralGained(int AmountGained) throws IOException{
+
+
+
+    public static String AddCoral(int AmountGained, int AmountSold) throws IOException{
       String TotalCoralGainedAdd = "";
+      String TotalCoralSoldAdd = "";
     for(Coral coral:Corallist){
-       int NewCoralInt = coral.GetGained() + AmountGained;
-       TotalCoralGainedAdd = Integer.toString(NewCoralInt);
+       int NewCoralGained = coral.GetGained() + AmountGained;
+       int NewCoralSold = coral.GetSold() + AmountSold;
+       TotalCoralGainedAdd = Integer.toString(NewCoralGained);
+       TotalCoralSoldAdd = Integer.toString(NewCoralSold);
        System.out.print(TotalCoralGainedAdd);
     }
-        clearFile();
-      PrintToCoral(TotalCoralGainedAdd);
+      clearFile(); 
       
+      PrintToCoral(TotalCoralGainedAdd, TotalCoralSoldAdd);
       return TotalCoralGainedAdd;
     }     
+    
+    
     public static void clearFile()
-
 {
     try{
-
     FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", false);
-
     PrintWriter pw = new PrintWriter(fw, false);
-
     pw.flush();
-
     pw.close();
-
     fw.close();
-
     }catch(Exception exception){
-
         System.out.println("Exception have been caught");
-
     }
-
 }
-    public static String PrintToCoral(String TotalCoralGainedAdd) throws IOException{
+    
+    public static String PrintToCoral(String TotalCoralSoldAdd, String TotalCoralGainedAdd) throws IOException{
      FileWriter fw = null;
      BufferedWriter bw = null;
      PrintWriter pw = null;
@@ -376,8 +381,8 @@ AddCoralGained(AmountGained);
             pw = new PrintWriter(bw);          
             pw.print(TotalCoralGainedAdd);
             pw.print(",");
+            pw.print(TotalCoralSoldAdd);
            
-
             System.out.println("Data Successfully appended into file");
             pw.flush();
 
@@ -391,8 +396,12 @@ AddCoralGained(AmountGained);
     }
         return null;
      
-    
     }
+    
+   
+     
+    
+    
     private void LoadSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoadSavedDataActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LoadSavedDataActionPerformed
