@@ -10,7 +10,8 @@ import java.io.IOException;
 import java.io.PrintWriter;
         import java.util.*; 
 
-
+//PeonyhPeopleStocktaker Class:  This class initiates the GUI, Creates Arraylists for the specific flowertypes,
+//Locates and loads data from certain text files, Manipulates collected data and sends it to GUI file to be printed.
 public class PeonyPeopleStocktaker {
    
 //Creates Arraylist of each type of flower
