@@ -84,18 +84,21 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel5.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel5.setText("Total Stock");
 
+        VeiwTotalGained.setEditable(false);
         VeiwTotalGained.setColumns(6);
         VeiwTotalGained.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         VeiwTotalGained.setRows(1);
         VeiwTotalGained.setPreferredSize(new java.awt.Dimension(60, 20));
         jScrollPane2.setViewportView(VeiwTotalGained);
 
+        VeiwTotalSold.setEditable(false);
         VeiwTotalSold.setColumns(6);
         VeiwTotalSold.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         VeiwTotalSold.setRows(1);
         VeiwTotalSold.setPreferredSize(new java.awt.Dimension(60, 20));
         jScrollPane3.setViewportView(VeiwTotalSold);
 
+        VeiwTotalStock.setEditable(false);
         VeiwTotalStock.setColumns(6);
         VeiwTotalStock.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
         VeiwTotalStock.setRows(1);
@@ -292,26 +295,19 @@ public class StocktakerGUI extends javax.swing.JPanel {
     private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed
     //Loctaes inputed numbers for Amount Gained and Amount Sold
     
-    
- 
-    
-
+    //Boundry Setting: Only allows positive numbers to be entered, if anything else is eneterd an Error msg appears
         String AmountGainedString = AddAmountGained.getText();
-        //if
-        boolean GainedCheck = AmountGainedString.matches(".*[a-zA-Z].*");
+        
+        boolean GainedCheck = AmountGainedString.matches(".*[a-zA-Z-].*");
         if (GainedCheck == true){
-            ErrorGained.setText("Error: Only numbers are to be entered");
+            ErrorGained.setText("Error: Only positive numbers are to be entered");
         }
        
-          
-       
-        
-        
         String AmountSoldString = AddAmountSold.getText();
-        //if
-        boolean SoldCheck = AmountSoldString.matches(".*[a-zA-Z].*");
+        
+        boolean SoldCheck = AmountSoldString.matches(".*[a-zA-Z-].*");
         if (SoldCheck == true){
-            ErrorSold.setText("Error: Only numbers are to be entered");
+            ErrorSold.setText("Error: Only positive numbers are to be entered");
         }
        
      
@@ -353,7 +349,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_AddSavedDataActionPerformed
  //Coral Section
     
- //Loads corsl.txt which holds the necessary data   
+ //Loads coral.txt which holds the necessary data   
 public static void CoralloadAdd(int AmountGained, int AmountSold) throws IOException{
 
 String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
@@ -635,6 +631,8 @@ AddSarah(AmountGained, AmountSold);
     
     
     private void VeiwDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VeiwDataActionPerformed
+        //COMMENT
+        
         String flowertype = VeiwFlowerType.getSelectedItem().toString();
     if (flowertype == "Coral Sunset")
     {VeiwTotalGained.setText(PeonyPeopleStocktaker.showCoralGained());    
