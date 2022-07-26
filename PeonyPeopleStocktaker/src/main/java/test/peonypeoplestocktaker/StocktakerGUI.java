@@ -52,6 +52,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
         AddAmountSold = new javax.swing.JTextField();
         ErrorGained = new javax.swing.JLabel();
         ErrorSold = new javax.swing.JLabel();
+        SavedMSG = new javax.swing.JLabel();
+
+        Tab.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jPanel1.setForeground(new java.awt.Color(153, 255, 255));
 
@@ -59,7 +62,8 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel2.setText("Type of Flower");
 
         VeiwFlowerType.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        VeiwFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flower Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
+        VeiwFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
+        VeiwFlowerType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VeiwFlowerType.setPreferredSize(new java.awt.Dimension(206, 36));
         VeiwFlowerType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -69,6 +73,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         VeiwData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         VeiwData.setText("View Data");
+        VeiwData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         VeiwData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VeiwDataActionPerformed(evt);
@@ -139,7 +144,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(VeiwFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addComponent(VeiwData)
                 .addGap(67, 67, 67)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -164,7 +169,8 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel3.setText("Type of Flower");
 
         AddFlowerType.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        AddFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Flower Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
+        AddFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
+        AddFlowerType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AddFlowerType.setPreferredSize(new java.awt.Dimension(170, 45));
         AddFlowerType.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +186,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         AddSavedData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddSavedData.setText("Save Data");
+        AddSavedData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         AddSavedData.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddSavedDataActionPerformed(evt);
@@ -187,9 +194,16 @@ public class StocktakerGUI extends javax.swing.JPanel {
         });
 
         AddAmountGained.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        AddAmountGained.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        AddAmountGained.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddAmountGainedActionPerformed(evt);
+            }
+        });
 
         AddAmountSold.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
+        ErrorGained.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         ErrorGained.setForeground(new java.awt.Color(255, 51, 51));
         ErrorGained.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
@@ -197,42 +211,41 @@ public class StocktakerGUI extends javax.swing.JPanel {
             }
         });
 
+        ErrorSold.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         ErrorSold.setForeground(new java.awt.Color(204, 0, 0));
+
+        SavedMSG.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        SavedMSG.setForeground(new java.awt.Color(0, 0, 255));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(246, 246, 246)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(246, 246, 246)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(355, 355, 355)
-                        .addComponent(AddSavedData))
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGap(217, 217, 217)
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(ErrorGained, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(93, 93, 93)
-                                    .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(ErrorGained, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(jPanel2Layout.createSequentialGroup()
-                            .addContainerGap()
-                            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addGap(6, 6, 6)
-                                    .addComponent(ErrorSold, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGroup(jPanel2Layout.createSequentialGroup()
-                                    .addComponent(jLabel7)
-                                    .addGap(108, 108, 108)
-                                    .addComponent(AddAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                            .addComponent(jLabel7)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AddAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel6)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addComponent(jLabel3)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(SavedMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ErrorSold, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(238, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(AddSavedData)
+                .addGap(342, 342, 342))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,19 +256,20 @@ public class StocktakerGUI extends javax.swing.JPanel {
                     .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(93, 93, 93)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ErrorGained, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
+                .addGap(32, 32, 32)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
                     .addComponent(AddAmountSold, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(ErrorSold, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(86, 86, 86)
+                .addComponent(ErrorSold, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(AddSavedData)
-                .addGap(23, 23, 23))
+                .addGap(18, 18, 18)
+                .addComponent(SavedMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(81, Short.MAX_VALUE))
         );
 
         Tab.addTab("Add Data", jPanel2);
@@ -293,7 +307,11 @@ public class StocktakerGUI extends javax.swing.JPanel {
     }//GEN-LAST:event_AddFlowerTypeActionPerformed
 
     private void AddSavedDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSavedDataActionPerformed
-    //Loctaes inputed numbers for Amount Gained and Amount Sold
+   
+        ErrorSold.setText("");
+        ErrorGained.setText("");
+        SavedMSG.setText("");
+        //Loctaes inputed numbers for Amount Gained and Amount Sold
     
     //Boundry Setting: Only allows positive numbers to be entered, if anything else is eneterd an Error msg appears
         String AmountGainedString = AddAmountGained.getText();
@@ -322,6 +340,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         if (flowertype == "Coral Sunset"){
         try {
             CoralloadAdd(AmountGained, AmountSold);
+            SavedMSG.setText("Data successfully printed into coral.txt");
           
         } catch (IOException ex) {
             Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
@@ -331,7 +350,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         if (flowertype == "Red Charm"){
         try {
             RedloadAdd(AmountGained, AmountSold);
-          
+            SavedMSG.setText("Data successfully printed into red.txt");
         } catch (IOException ex) {
             Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
         }}
@@ -340,7 +359,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         if (flowertype == "Sarah Bernhardt"){
         try {
             SarahloadAdd(AmountGained, AmountSold);
-          
+            SavedMSG.setText("Data successfully printed into sarah.txt");
         } catch (IOException ex) {
             Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
         }}
@@ -411,6 +430,7 @@ AddCoral(AmountGained, AmountSold);
         System.out.println("Exception have been caught");
     }
 }
+     
     //Prints new manipulated data to coral.txt
     public static String PrintToCoral(String TotalCoralSoldAdd, String TotalCoralGainedAdd) throws IOException{
      FileWriter fw = null;
@@ -425,8 +445,6 @@ AddCoral(AmountGained, AmountSold);
             pw.print(",");
             pw.print(TotalCoralSoldAdd);
            
-           
-            System.out.println("Data successfully printed into file");
             pw.flush();
 
         } finally {
@@ -437,10 +455,10 @@ AddCoral(AmountGained, AmountSold);
             } catch (IOException io) {
             }
     }
+     
         return null;
      
     }
-    
     
  //Red Section
     
@@ -519,8 +537,7 @@ AddRed(AmountGained, AmountSold);
             pw.print(TotalRedGainedAdd);
             pw.print(",");
             pw.print(TotalRedSoldAdd);
-           
-            System.out.println("Data successfully printed into file");
+         
             pw.flush();
 
         } finally {
@@ -614,7 +631,6 @@ AddSarah(AmountGained, AmountSold);
             pw.print(",");
             pw.print(TotalSarahSoldAdd);
            
-            System.out.println("Data successfully printed into file");
             pw.flush();
 
         } finally {
@@ -655,6 +671,10 @@ AddSarah(AmountGained, AmountSold);
         // TODO add your handling code here:
     }//GEN-LAST:event_ErrorGainedComponentHidden
 
+    private void AddAmountGainedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddAmountGainedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddAmountGainedActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AddAmountGained;
@@ -663,6 +683,7 @@ AddSarah(AmountGained, AmountSold);
     private javax.swing.JButton AddSavedData;
     private javax.swing.JLabel ErrorGained;
     private javax.swing.JLabel ErrorSold;
+    private javax.swing.JLabel SavedMSG;
     private javax.swing.JTabbedPane Tab;
     private javax.swing.JButton VeiwData;
     private javax.swing.JComboBox<String> VeiwFlowerType;
