@@ -1,7 +1,7 @@
 
 package test.peonypeoplestocktaker;
 
-
+//Crestes new Coral object for Corallist Arraylist
 public class Coral {
 
     private int Sold;

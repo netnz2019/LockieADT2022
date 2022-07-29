@@ -1,7 +1,7 @@
 
 package test.peonypeoplestocktaker;
 
-
+//Crestes new Sarah object for Sarahlist Arraylist
 public class Sarah {
     private int Sold;
     private int Gained;

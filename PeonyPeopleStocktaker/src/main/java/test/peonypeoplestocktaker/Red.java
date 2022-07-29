@@ -1,7 +1,7 @@
 
 package test.peonypeoplestocktaker;
 
-        
+//Crestes new Red object for Redlist Arraylist        
 public class Red {
     private int Sold;
     public int Gained;
