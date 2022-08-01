@@ -96,6 +96,7 @@ public static String showCoralStock(){
 
 
 
+
      
 //Red section 
  
@@ -155,7 +156,6 @@ public static String showRedStock(){
 }
         return RedStock;
 }
-
 
 
 
@@ -224,4 +224,6 @@ public static String showSarahStock(){
 }
 
 
-        
+   
+
+

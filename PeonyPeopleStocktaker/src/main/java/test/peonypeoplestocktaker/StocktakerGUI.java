@@ -42,6 +42,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         ViewTotalSold = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
         ViewTotalStock = new javax.swing.JTextArea();
+        ErrorFlowerView = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         AddFlowerType = new javax.swing.JComboBox<>();
@@ -53,6 +54,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         ErrorGained = new javax.swing.JLabel();
         ErrorSold = new javax.swing.JLabel();
         SavedMSG = new javax.swing.JLabel();
+        ErrorFlowerAdd = new javax.swing.JLabel();
 
         Tab.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
@@ -110,6 +112,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
         ViewTotalStock.setPreferredSize(new java.awt.Dimension(60, 20));
         jScrollPane4.setViewportView(ViewTotalStock);
 
+        ErrorFlowerView.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        ErrorFlowerView.setForeground(new java.awt.Color(204, 0, 0));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -122,9 +127,6 @@ public class StocktakerGUI extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(ViewFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(340, 340, 340)
-                        .addComponent(ViewData, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(292, 292, 292)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jLabel1)
@@ -134,7 +136,13 @@ public class StocktakerGUI extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(340, 340, 340)
+                        .addComponent(ViewData, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(325, 325, 325)
+                        .addComponent(ErrorFlowerView, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(231, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -144,7 +152,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(ViewFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(71, 71, 71)
+                .addGap(18, 18, 18)
+                .addComponent(ErrorFlowerView, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29)
                 .addComponent(ViewData)
                 .addGap(43, 43, 43)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -205,7 +215,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         AddAmountSold.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
 
         ErrorGained.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        ErrorGained.setForeground(new java.awt.Color(255, 51, 51));
+        ErrorGained.setForeground(new java.awt.Color(255, 0, 0));
         ErrorGained.addComponentListener(new java.awt.event.ComponentAdapter() {
             public void componentHidden(java.awt.event.ComponentEvent evt) {
                 ErrorGainedComponentHidden(evt);
@@ -213,15 +223,22 @@ public class StocktakerGUI extends javax.swing.JPanel {
         });
 
         ErrorSold.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
-        ErrorSold.setForeground(new java.awt.Color(204, 0, 0));
+        ErrorSold.setForeground(new java.awt.Color(255, 0, 0));
 
         SavedMSG.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         SavedMSG.setForeground(new java.awt.Color(0, 0, 255));
+
+        ErrorFlowerAdd.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        ErrorFlowerAdd.setForeground(new java.awt.Color(204, 0, 0));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(AddSavedData)
+                .addGap(342, 342, 342))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(246, 246, 246)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -230,12 +247,12 @@ public class StocktakerGUI extends javax.swing.JPanel {
                             .addComponent(jLabel7)
                             .addGap(185, 185, 185))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addGap(29, 29, 29)
-                            .addComponent(jLabel6))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel3)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
+                            .addGap(29, 29, 29)
+                            .addComponent(jLabel6)))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                         .addComponent(SavedMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(ErrorSold, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -245,9 +262,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
                         .addComponent(ErrorGained, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(238, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(AddSavedData)
-                .addGap(342, 342, 342))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ErrorFlowerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -256,7 +273,9 @@ public class StocktakerGUI extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(93, 93, 93)
+                .addGap(26, 26, 26)
+                .addComponent(ErrorFlowerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -313,6 +332,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         ErrorSold.setText("");
         ErrorGained.setText("");
         SavedMSG.setText("");
+        ErrorFlowerAdd.setText("");
         //Loctaes inputed numbers for Amount Gained and Amount Sold
     
     //Boundry Setting: Only allows positive numbers to be entered, if anything else is eneterd an Error msg appears
@@ -339,11 +359,14 @@ public class StocktakerGUI extends javax.swing.JPanel {
         //Chooses certain method based on the Flower Type the user has pciked in the ADD section
         String flowertype = AddFlowerType.getSelectedItem().toString();
         
+         if (flowertype == "Choose Type"){
+             ErrorFlowerAdd.setText("Error: Select a type of flower");
+         }
+        
         if (flowertype == "Coral Sunset"){
         try {
             CoralloadAdd(AmountGained, AmountSold);
             SavedMSG.setText("Data successfully printed into coral.txt");
-          
         } catch (IOException ex) {
             Logger.getLogger(StocktakerGUI.class.getName()).log(Level.SEVERE, null, ex);
         }}
@@ -650,8 +673,13 @@ AddSarah(AmountGained, AmountSold);
     
     private void ViewDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDataActionPerformed
         //Prints data loaded from text files to GUI View section
-        
-        String flowertype = ViewFlowerType.getSelectedItem().toString();
+       ErrorFlowerView.setText("");
+                
+    String flowertype = ViewFlowerType.getSelectedItem().toString();
+    if (flowertype == "Choose Type"){
+      ErrorFlowerView.setText("Error: Select a type of flower");
+         }
+    
     if (flowertype == "Coral Sunset")
     {ViewTotalGained.setText(PeonyPeopleStocktaker.showCoralGained());    
         ViewTotalSold.setText(PeonyPeopleStocktaker.showCoralSold());
@@ -683,6 +711,8 @@ AddSarah(AmountGained, AmountSold);
     private javax.swing.JTextField AddAmountSold;
     private javax.swing.JComboBox<String> AddFlowerType;
     private javax.swing.JButton AddSavedData;
+    private javax.swing.JLabel ErrorFlowerAdd;
+    private javax.swing.JLabel ErrorFlowerView;
     private javax.swing.JLabel ErrorGained;
     private javax.swing.JLabel ErrorSold;
     private javax.swing.JLabel SavedMSG;
