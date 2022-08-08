@@ -284,7 +284,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(304, 304, 304)
                         .addComponent(SavedMSG, javax.swing.GroupLayout.PREFERRED_SIZE, 244, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(234, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -297,8 +297,8 @@ public class StocktakerGUI extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(AddFlowerType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(ErrorFlowerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(19, 19, 19)
+                        .addComponent(ErrorFlowerAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel6)
                             .addComponent(AddAmountGained, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -359,10 +359,19 @@ public class StocktakerGUI extends javax.swing.JPanel {
         ErrorGained.setText("");
         SavedMSG.setText("");
         ErrorFlowerAdd.setText("");
+        
+        //Error Prevention: Writes error msg if no type of flower is selected
+        String flowertype = AddFlowerType.getSelectedItem().toString();
+        
+         if (flowertype == "Choose Type"){
+             ErrorFlowerAdd.setText("Error: Select a type of flower");
+         }
+        
         //Loctaes inputed numbers for Amount Gained and Amount Sold
     
     //Boundry Setting: Only allows positive numbers to be entered, if anything else is eneterd an Error msg appears
         String AmountGainedString = AddAmountGained.getText();
+        
         
         boolean GainedCheck = AmountGainedString.matches(".*[a-zA-Z-.].*");
         if (GainedCheck == true){
@@ -383,11 +392,6 @@ public class StocktakerGUI extends javax.swing.JPanel {
         
         
         //Chooses certain method based on the Flower Type the user has pciked in the ADD section
-        String flowertype = AddFlowerType.getSelectedItem().toString();
-        
-         if (flowertype == "Choose Type"){
-             ErrorFlowerAdd.setText("Error: Select a type of flower");
-         }
         
         if (flowertype == "Coral Sunset"){
         try {
@@ -698,14 +702,15 @@ AddSarah(AmountGained, AmountSold);
     
     
     private void ViewDataActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewDataActionPerformed
-        //Prints data loaded from text files to GUI View section
-       ErrorFlowerView.setText("");
-                
+        
+    ErrorFlowerView.setText("");
+           
+    //Error Prevention: writes error msg if no type of flower is selected
     String flowertype = ViewFlowerType.getSelectedItem().toString();
     if (flowertype == "Choose Type"){
       ErrorFlowerView.setText("Error: Select a type of flower");
          }
-    
+    //Prints data loaded from text files to GUI View section
     if (flowertype == "Coral Sunset")
     {ViewTotalGained.setText(PeonyPeopleStocktaker.showCoralGained());    
         ViewTotalSold.setText(PeonyPeopleStocktaker.showCoralSold());
