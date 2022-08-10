@@ -60,11 +60,12 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         Tab.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.setForeground(new java.awt.Color(51, 153, 255));
 
         jLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel2.setText("Type of Flower");
 
+        ViewFlowerType.setBackground(new java.awt.Color(204, 204, 204));
         ViewFlowerType.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         ViewFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
         ViewFlowerType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -75,6 +76,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
             }
         });
 
+        ViewData.setBackground(new java.awt.Color(204, 204, 204));
         ViewData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         ViewData.setText("View Data");
         ViewData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -191,6 +193,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel3.setText("Type of Flower");
 
+        AddFlowerType.setBackground(new java.awt.Color(204, 204, 204));
         AddFlowerType.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddFlowerType.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Choose Type", "Coral Sunset", "Sarah Bernhardt", "Red Charm" }));
         AddFlowerType.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -207,6 +210,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel7.setText("Amount Sold");
 
+        AddSavedData.setBackground(new java.awt.Color(204, 204, 204));
         AddSavedData.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddSavedData.setText("Save Data");
         AddSavedData.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -216,6 +220,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
             }
         });
 
+        AddAmountSold.setBackground(new java.awt.Color(204, 204, 204));
         AddAmountSold.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddAmountSold.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
 
@@ -238,6 +243,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
 
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\Images\\Transparent.png")); // NOI18N
 
+        AddAmountGained.setBackground(new java.awt.Color(204, 204, 204));
         AddAmountGained.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         AddAmountGained.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         AddAmountGained.addActionListener(new java.awt.event.ActionListener() {
