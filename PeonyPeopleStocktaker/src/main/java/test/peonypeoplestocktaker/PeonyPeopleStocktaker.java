@@ -31,7 +31,7 @@ window.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
 // Loads the coral.txt file which stores the data
 public static void Coralload(){
 
-String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
+String filename = "coral.txt";
 File coral = new File(filename);
 
 try{
@@ -97,7 +97,7 @@ public static String showCoralStock(){
 // Loads the red.txt file which stores the data       
 public static void Redload(){
 
-String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt";
+String filename = "red.txt";
 File red = new File(filename);
 
 try{
@@ -161,7 +161,7 @@ public static String showRedStock(){
 // Loads the sarah.txt file which stores the data
 public static void Sarahload(){
 
-String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt";
+String filename = "sarah.txt";
 File sarah = new File(filename);
 
 try{

@@ -435,7 +435,7 @@ public class StocktakerGUI extends javax.swing.JPanel {
  //Loads coral.txt which holds the necessary data   
 public static void CoralloadAdd(int AmountGained, int AmountSold) throws IOException{
 
-String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt";
+String filename = "coral.txt";
 File coral = new File(filename);
 
 try{
@@ -485,7 +485,7 @@ AddCoral(AmountGained, AmountSold);
     public static void clearCoral()
 {
     try{
-    FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", false);
+    FileWriter fw = new FileWriter("coral.txt", false);
     PrintWriter pw = new PrintWriter(fw, false);
     pw.flush();
     pw.close();
@@ -502,7 +502,7 @@ AddCoral(AmountGained, AmountSold);
      PrintWriter pw = null;
      
      try {
-            fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\coral.txt", true);
+            fw = new FileWriter("coral.txt", true);
             bw = new BufferedWriter(fw);
             pw = new PrintWriter(bw);          
             pw.print(TotalCoralGainedAdd);
@@ -529,7 +529,7 @@ AddCoral(AmountGained, AmountSold);
  //Loads red.txt which holds the necessary data
  public static void RedloadAdd(int AmountGained, int AmountSold) throws IOException{
 
-String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt";
+String filename = "red.txt";
 File red = new File(filename);
 
 try{
@@ -579,7 +579,7 @@ AddRed(AmountGained, AmountSold);
     public static void clearRed()
 {
     try{
-    FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt", false);
+    FileWriter fw = new FileWriter("red.txt", false);
     PrintWriter pw = new PrintWriter(fw, false);
     pw.flush();
     pw.close();
@@ -595,7 +595,7 @@ AddRed(AmountGained, AmountSold);
      PrintWriter pw = null;
      
      try {
-            fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\red.txt", true);
+            fw = new FileWriter("red.txt", true);
             bw = new BufferedWriter(fw);
             pw = new PrintWriter(bw);          
             pw.print(TotalRedGainedAdd);
@@ -622,7 +622,7 @@ AddRed(AmountGained, AmountSold);
  //Loads sarah.txt which holds the necessary data   
    public static void SarahloadAdd(int AmountGained, int AmountSold) throws IOException{
 
- String filename = "C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt";
+ String filename = "sarah.txt";
  File sarah = new File(filename);
 
  try{
@@ -672,7 +672,7 @@ AddSarah(AmountGained, AmountSold);
     public static void clearSarah()
 {
     try{
-    FileWriter fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt", false);
+    FileWriter fw = new FileWriter("sarah.txt", false);
     PrintWriter pw = new PrintWriter(fw, false);
     pw.flush();
     pw.close();
@@ -688,7 +688,7 @@ AddSarah(AmountGained, AmountSold);
      PrintWriter pw = null;
      
      try {
-            fw = new FileWriter("C:\\Users\\nzloc\\OneDrive\\Documents\\GitHub\\LockieADT2022\\PeonyPeopleStocktaker\\src\\main\\java\\test\\peonypeoplestocktaker\\sarah.txt", true);
+            fw = new FileWriter("sarah.txt", true);
             bw = new BufferedWriter(fw);
             pw = new PrintWriter(bw);          
             pw.print(TotalSarahGainedAdd);
