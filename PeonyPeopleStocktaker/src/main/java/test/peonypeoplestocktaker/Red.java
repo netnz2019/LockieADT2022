@@ -1,7 +1,8 @@
 
 package test.peonypeoplestocktaker;
 
-//Crestes new Red object for Redlist Arraylist        
+//Crestes new Red object for Redlist Arraylist   
+//This controls the data enterted by the user regarding the total sold and total gained of the flower
 public class Red {
     private int Sold;
     public int Gained;

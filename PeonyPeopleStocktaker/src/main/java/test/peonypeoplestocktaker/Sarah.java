@@ -2,6 +2,7 @@
 package test.peonypeoplestocktaker;
 
 //Crestes new Sarah object for Sarahlist Arraylist
+//This controls the data enterted by the user regarding the total sold and total gained of the flower
 public class Sarah {
     private int Sold;
     private int Gained;

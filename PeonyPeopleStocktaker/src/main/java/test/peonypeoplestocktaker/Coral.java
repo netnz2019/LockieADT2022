@@ -1,8 +1,8 @@
 
 package test.peonypeoplestocktaker;
 
-//Crestes new Coral object for Corallist Arraylist
-// add context about sold and gained regrading flower
+//Crestes new Coral object for Corallist Arraylist, 
+//This controls the data enterted by the user regarding the total sold and total gained of the flower
 public class Coral {
 
     private int Sold;
